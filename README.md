@@ -12,9 +12,9 @@ docker pull linux4ever/vscode-node
 ## Envirnoment
 GIT_REPO is optional which is the url of the git repo.
 
-GIT_USERNAME is required, use your windows username
+GIT_USERNAME is required, use your git repo username
 
-GIT_EMAIL is required, use your work email
+GIT_EMAIL is required, use your git repo email
 
 PASSWORD is optional to set a password to get to vscoder
 

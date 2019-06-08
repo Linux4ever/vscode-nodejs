@@ -1,9 +1,10 @@
 # Using dev-nodejs image
 
 ## List of version
+linux4ever/vscode-node:10.16.0
 
 ## Pulling dev-nodejs images
-docker pull
+docker pull linux4ever/vscode-node
 
 ## Envirnoment
 GIT_REPO is optional which is the url of the git repo.
@@ -22,13 +23,13 @@ PASSWORD is optional to set a password to get to vscoder
 /home/coder/src - this points to your local machine project file if using -e GIT_REPO=repo_url this command is not needed.
 
 ## Running dev-nodejs image
-docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v /path/to/your/.ssh:/home/coder/.ssh -v /path/to/vscode:/home/coder/vscode/data -e GIT_REPO=repo_url
+docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v /path/to/your/.ssh:/home/coder/.ssh -v /path/to/vscode:/home/coder/vscode/data -e GIT_REPO=repo_url linux4ever/vscode-node:10.16.0
 
-docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v /path/to/your/.ssh:/home/coder/.ssh -v /path/to/vscode:/home/coder/vscode/data -v /path/to/your/project:/home/coder/src
+docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v /path/to/your/.ssh:/home/coder/.ssh -v /path/to/vscode:/home/coder/vscode/data -v /path/to/your/project:/home/coder/src linux4ever/vscode-node:10.16.0
 
 Example:
 ```
-docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v ~/.ssh:/home/coder/.ssh -v ~/vscode:/home/coder/vscode/data -e GIT_REPO=repo_url -e GIT_USERNAME=username -e GIT_EMAIL=email 
+docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v ~/.ssh:/home/coder/.ssh -v ~/vscode:/home/coder/vscode/data -e GIT_REPO=repo_url -e GIT_USERNAME=username -e GIT_EMAIL=email linux4ever/vscode-node:10.16.0
 ```
 
 ## Default node global install
@@ -48,4 +49,8 @@ use the following command:
 ```
 ng serve --host 0.0.0.0
 ```
-
+## Running node debugger
+```
+node --inspect 0.0.0.0 start.js
+nodemon --inspect 0.0.0.0 start.js
+```

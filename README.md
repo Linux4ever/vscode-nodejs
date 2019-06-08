@@ -21,9 +21,9 @@ PASSWORD is optional to set a password to get to vscoder
 ## Volume to mount
 /home/coder/vscode/data - vscode extensions saved to your local machine
 
-/home/coder/.ssh - this points to your local machine ssh keys to connect to ditscm using git
+/home/coder/.ssh - this points to your local machine ssh keys to connect to git repo
 
-/home/coder/src - this points to your local machine project file if using -e GIT_REPO=repo_url this command is not needed.
+/home/coder/src - this points to your local machine project file
 
 ## Running dev-nodejs image
 docker run -p8443:8443 -p4200:4200 -p4201:4201 -p9229:9229 -v /path/to/your/.ssh:/home/coder/.ssh -v /path/to/vscode:/home/coder/vscode/data -e GIT_REPO=repo_url linux4ever/vscode-node:10.16.0

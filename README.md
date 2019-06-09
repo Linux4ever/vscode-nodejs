@@ -57,3 +57,7 @@ ng serve --host 0.0.0.0
 node --inspect 0.0.0.0 start.js
 nodemon --inspect 0.0.0.0 start.js
 ```
+
+## Credits
+Thank you for Code-server to convert vscode into a browser format.
+[Coder-Server](https://github.com/cdr/code-server)

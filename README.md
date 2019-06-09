@@ -59,5 +59,4 @@ nodemon --inspect 0.0.0.0 start.js
 ```
 
 ## Credits
-Thank you for Code-server to convert vscode into a browser format.
-[Coder-Server](https://github.com/cdr/code-server)
+Thank you for [code-server](https://github.com/cdr/code-server) to convert vscode into a browser format.

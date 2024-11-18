@@ -1,4 +1,4 @@
-FROM node:10.16.0-stretch
+FROM node:20.18.0-bookworm
 
 # get update for apk before install packages
 RUN apt-get update
@@ -7,8 +7,11 @@ RUN apt-get install -y git openssl curl net-tools sudo libstdc++6
 WORKDIR /
 
 # get code-server
-RUN wget https://github.com/cdr/code-server/releases/download/1.1119-vsc1.33.1/code-server1.1119-vsc1.33.1-linux-x64.tar.gz \
-    && tar -xzvf code-server1.1119-vsc1.33.1-linux-x64.tar.gz && chmod a+x code-server1.1119-vsc1.33.1-linux-x64/code-server
+#RUN wget https://github.com/cdr/code-server/releases/download/1.1119-vsc1.33.1/code-server1.1119-vsc1.33.1-linux-x64.tar.gz \
+#    && tar -xzvf code-server1.1119-vsc1.33.1-linux-x64.tar.gz && chmod a+x code-server1.1119-vsc1.33.1-linux-x64/code-server
+
+RUN wget https://github.com/coder/code-server/releases/download/v4.95.1/code-server-4.95.1-linux-amd64.tar.gz \
+	&& tar -xzvf code-server-4.95.1-linux-amd64.tar.gz && chmod a+x code-server-4.95.1-linux-amd64/bin/code-server
 
 RUN adduser --gecos '' --disabled-password coder && \
 	echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd

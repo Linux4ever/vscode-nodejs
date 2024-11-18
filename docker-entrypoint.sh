@@ -26,7 +26,7 @@ fi
 
 if [ -n "$PASSWORD" ]
     then
-        /code-server1.1119-vsc1.33.1-linux-x64/code-server --allow-http --password $PASSWORD --data-dir /home/coder/vscode/data /home/coder/src
+        /code-server-4.95.1-linux-amd64/bin/code-server --bind-addr 0.0.0.0:8443 --auth $PASSWORD --user-data-dir /home/coder/vscode/data /home/coder/src
     else
-        /code-server1.1119-vsc1.33.1-linux-x64/code-server --allow-http --no-auth --data-dir /home/coder/vscode/data /home/coder/src
+        /code-server-4.95.1-linux-amd64/bin/code-server --bind-addr 0.0.0.0:8443 --auth none --user-data-dir /home/coder/vscode/data /home/coder/src
 fi
